@@ -1,9 +1,9 @@
 import 'package:assesment/config/const.dart';
 import 'package:assesment/viewmodel/weather_view_model.dart';
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:assesment/view/widget/widget.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
 
 class WeatherView extends StatelessWidget {
   final String name;
@@ -44,7 +44,6 @@ class WeatherView extends StatelessWidget {
 
               if (viewModel.currentWeather == null ||
                   viewModel.forecastWeather.isEmpty) {
-                // Tampilkan dialog jika data tidak ditemukan
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   AwesomeDialog(
                     context: context,
@@ -59,8 +58,7 @@ class WeatherView extends StatelessWidget {
                     btnOkColor: Colors.redAccent,
                   ).show();
                 });
-
-                return const SizedBox(); // Menampilkan widget kosong sementara menunggu dialog
+                return const SizedBox();
               }
 
               return SingleChildScrollView(
