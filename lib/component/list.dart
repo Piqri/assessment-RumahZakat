@@ -22,5 +22,6 @@ List<Province> provincesItem = [
   Province(id: 5, name: 'Kepulauan Riau', cities: [
     City(id: 1, name: 'Tanjung'),
     City(id: 2, name: 'Tanjung Pinang'),
+    City(id: 3, name: 'Batam'),
   ]),
 ];
